@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class ElementDispenser : MonoBehaviour
@@ -19,6 +20,10 @@ public class ElementDispenser : MonoBehaviour
 
     [SerializeField] private GameObject m_activeElementObject;
     public GameObject ActiveElementObject { get { return m_activeElementObject; } }
+
+    [Header("UI")]
+    [SerializeField] private Canvas m_elementNameCanvas;
+    [SerializeField] private TextMeshProUGUI m_elementNameText;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +55,9 @@ public class ElementDispenser : MonoBehaviour
             m_activeElementObject.SetActive(true);
 
             m_activeElementObject.transform.position = m_spawnPointTransform.position;
+
+            m_elementNameCanvas.enabled = true;
+            m_elementNameText.SetText(elementInfo.Value.Name);
         }
     }
 
@@ -59,6 +67,8 @@ public class ElementDispenser : MonoBehaviour
         {
             m_activeElementObject.SetActive(false);
             m_activeElementObject = null;
+            m_elementNameCanvas.enabled = false;
+            m_elementNameText.SetText("");
         }
     }
 }
