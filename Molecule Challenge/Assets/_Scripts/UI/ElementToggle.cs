@@ -23,6 +23,14 @@ public class ElementToggle : MonoBehaviour
         }
     }
 
+    private void OnDestroy()
+    {
+        if (m_toggle != null)
+        {
+            m_toggle.onValueChanged.RemoveAllListeners();
+        }
+    }
+
     public void SetSymbolText(string symbol)
     {
         m_label.SetText(symbol);

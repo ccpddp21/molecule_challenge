@@ -18,11 +18,17 @@ public class ElementDispenser : MonoBehaviour
     public Transform SpawnPointTransform { get { return m_spawnPointTransform; } }
 
     [SerializeField] private GameObject m_activeElementObject;
+    public GameObject ActiveElementObject { get { return m_activeElementObject; } }
 
     // Start is called before the first frame update
     void Start()
     {
         ElementManager.ElementSelectedEvent.AddListener(OnElementSelected);
+    }
+
+    private void OnDestroy()
+    {
+        ElementManager.ElementSelectedEvent.RemoveListener(OnElementSelected);
     }
 
     private void OnElementSelected(ElementManager.ElementInfo? elementInfo, DispenserNumber number)

@@ -18,13 +18,6 @@ public class ElementManager : MonoBehaviour
         public int Electrons;
     }
 
-    //[System.Serializable]
-    //public struct ElementPoolItem
-    //{
-    //    public string Name;
-    //    public GameObject ElementObject;
-    //}
-
     [Header("Info")]
     [SerializeField] private ElementInfo activeOne;
     [SerializeField] private ElementInfo activeTwo;
