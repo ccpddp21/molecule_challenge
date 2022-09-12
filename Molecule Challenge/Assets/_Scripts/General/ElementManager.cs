@@ -52,13 +52,16 @@ public class ElementManager : MonoBehaviour
 
     private void CreateElementToggles()
     {
+        Toggle toggle;
         ElementToggle he;
         foreach (ElementInfo element in Elements)
         {
             // Create element toggle for Element Panel One
             m_prefab = Instantiate(m_togglePrefab, m_elementPanelOne.transform);
 
-            m_prefab.GetComponent<Toggle>().group = m_elementPanelOne.GetComponent<ToggleGroup>();
+            toggle = m_prefab.GetComponent<Toggle>();
+            toggle.group = m_elementPanelOne.GetComponent<ToggleGroup>();
+            toggle.graphic.color = m_colorOne;
 
             he = m_prefab.GetComponent<ElementToggle>();
             if (he != null)
@@ -73,7 +76,9 @@ public class ElementManager : MonoBehaviour
             // Create element toggle for Element Panel Two
             m_prefab = Instantiate(m_togglePrefab, m_elementPanelTwo.transform);
 
-            m_prefab.GetComponent<Toggle>().group = m_elementPanelTwo.GetComponent<ToggleGroup>();
+            toggle = m_prefab.GetComponent<Toggle>();
+            toggle.group = m_elementPanelTwo.GetComponent<ToggleGroup>();
+            toggle.graphic.color = m_colorTwo;
 
             he = m_prefab.GetComponent<ElementToggle>();
             if (he != null)
