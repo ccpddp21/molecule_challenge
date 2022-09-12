@@ -11,6 +11,9 @@ public class ElementToggle : MonoBehaviour
     [SerializeField] private GameObject m_highlightGameObject;
     [SerializeField] private TextMeshProUGUI m_label;
 
+    public ElementManager.ElementInfo ElementInfo { get; set; }
+    public ElementDispenser.DispenserNumber AssociatedDispenser { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,11 @@ public class ElementToggle : MonoBehaviour
         if (toggle.isOn)
         {
             m_highlightGameObject.GetComponent<Image>().color = m_highlightColor;
+            ElementManager.ElementSelectedEvent.Invoke(ElementInfo, AssociatedDispenser);
+        }
+        else
+        {
+            ElementManager.ElementSelectedEvent.Invoke(null, AssociatedDispenser);
         }
     }
 }

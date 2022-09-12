@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class ElementManager : MonoBehaviour
@@ -13,9 +14,20 @@ public class ElementManager : MonoBehaviour
         public string Name;
         public string Symbol;
         public GameObject HighlightObject;
-        public GameObject ElementPrefab;
+        public GameObject ElementObject;
         public int Electrons;
     }
+
+    //[System.Serializable]
+    //public struct ElementPoolItem
+    //{
+    //    public string Name;
+    //    public GameObject ElementObject;
+    //}
+
+    [Header("Info")]
+    [SerializeField] private ElementInfo activeOne;
+    [SerializeField] private ElementInfo activeTwo;
 
     [Header("UI")]
     [SerializeField] private GameObject m_togglePrefab;
@@ -24,12 +36,14 @@ public class ElementManager : MonoBehaviour
     [SerializeField] private Color m_colorTwo;
     [SerializeField] private GameObject m_elementPanelTwo;
 
-    [Header("Element List")]
+    [Header("Element Info List")]
     [SerializeField] private List<ElementInfo> Elements = new List<ElementInfo>();
     public Dictionary<string, ElementInfo> ElementDict = new Dictionary<string, ElementInfo>();
 
     private GameObject m_prefab;
     private List<GameObject> m_elementToggles = new List<GameObject>();
+
+    public static UnityEvent<ElementInfo?, ElementDispenser.DispenserNumber> ElementSelectedEvent = new UnityEvent<ElementInfo?, ElementDispenser.DispenserNumber>();
 
     private void Awake()
     {
@@ -66,9 +80,11 @@ public class ElementManager : MonoBehaviour
             he = m_prefab.GetComponent<ElementToggle>();
             if (he != null)
             {
+                he.ElementInfo = element;
                 he.SetSymbolText(element.Symbol);
                 he.SetHighlightGameObject(element.HighlightObject);
                 he.SetHighlightColor(m_colorOne);
+                he.AssociatedDispenser = ElementDispenser.DispenserNumber.One;
             }
 
             m_elementToggles.Add(m_prefab);
@@ -83,9 +99,11 @@ public class ElementManager : MonoBehaviour
             he = m_prefab.GetComponent<ElementToggle>();
             if (he != null)
             {
+                he.ElementInfo = element;
                 he.SetSymbolText(element.Symbol);
                 he.SetHighlightGameObject(element.HighlightObject);
                 he.SetHighlightColor(m_colorTwo);
+                he.AssociatedDispenser = ElementDispenser.DispenserNumber.Two;
             }
 
             m_elementToggles.Add(m_prefab);
