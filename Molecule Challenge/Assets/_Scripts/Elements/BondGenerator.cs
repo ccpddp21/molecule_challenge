@@ -109,10 +109,26 @@ public class BondGenerator : MonoBehaviour
     private void ShowPossibleBonds()
     {
         m_foundInfoList.Clear();
-        m_foundInfoList.AddRange(m_bondInfoList.FindAll(bondInfo =>
+        
+        if (elemOneInfo.Value.Name == elemTwoInfo.Value.Name)
+        {
+            m_foundInfoList.AddRange(m_bondInfoList.FindAll(bondInfo =>
             {
                 return bondInfo.Elements.Contains(elemOneInfo.Value.Name) && bondInfo.Elements.Contains(elemTwoInfo.Value.Name);
             }));
+
+            m_foundInfoList.RemoveAll(bondInfo =>
+            {
+                return bondInfo.Elements[0] != elemOneInfo.Value.Name || bondInfo.Elements[1] != elemTwoInfo.Value.Name;
+            });
+        }
+        else
+        {
+            m_foundInfoList.AddRange(m_bondInfoList.FindAll(bondInfo =>
+            {
+                return bondInfo.Elements.Contains(elemOneInfo.Value.Name) && bondInfo.Elements.Contains(elemTwoInfo.Value.Name);
+            }));
+        }
 
         string fullName;
         foreach (BondInfo info in m_foundInfoList)

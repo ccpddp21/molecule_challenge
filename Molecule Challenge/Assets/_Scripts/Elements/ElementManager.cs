@@ -32,10 +32,11 @@ public class ElementManager : MonoBehaviour
         public GameObject ElementObject;
         public int Electrons;
     }
-
-    [Header("Info")]
-    [SerializeField] private ElementInfo activeOne;
-    [SerializeField] private ElementInfo activeTwo;
+    [Header("Element Dispensers")]
+    [SerializeField] private ElementDispenser m_dispenserOne;
+    public ElementDispenser DispenserOne { get { return m_dispenserOne; } }
+    [SerializeField] private ElementDispenser m_dispenserTwo;
+    public ElementDispenser DispenserTwo { get { return m_dispenserTwo; } }
 
     [Header("UI")]
     [SerializeField] private GameObject m_togglePrefab;

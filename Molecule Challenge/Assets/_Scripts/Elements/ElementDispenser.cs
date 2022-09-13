@@ -21,6 +21,9 @@ public class ElementDispenser : MonoBehaviour
     [SerializeField] private GameObject m_activeElementObject;
     public GameObject ActiveElementObject { get { return m_activeElementObject; } }
 
+    [SerializeField] private ElementManager.ElementInfo activeElementInfo;
+    public ElementManager.ElementInfo ActiveElementInfo { get { return activeElementInfo; } }
+
     [Header("UI")]
     [SerializeField] private Canvas m_elementNameCanvas;
     [SerializeField] private TextMeshProUGUI m_elementNameText;
