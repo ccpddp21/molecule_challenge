@@ -8,10 +8,25 @@ public class ElementManager : MonoBehaviour
 {
     public static ElementManager instance;
 
+    public enum ElementOption
+    {
+        Hydrogen,
+        Carbon,
+        Nitrogen,
+        Oxygen,
+        Fluorine,
+        Neon,
+        Sodium,
+        Magnesium,
+        Aluminum,
+        Sulfur,
+        Chlorine
+    }
+
     [System.Serializable]
     public struct ElementInfo
     {
-        public string Name;
+        public ElementOption Name;
         public string Symbol;
         public GameObject HighlightObject;
         public GameObject ElementObject;
@@ -53,7 +68,7 @@ public class ElementManager : MonoBehaviour
     {
         foreach (ElementInfo element in Elements)
         {
-            ElementDict.Add(element.Name, element);
+            ElementDict.Add(element.Name.ToString(), element);
         }
     }
 

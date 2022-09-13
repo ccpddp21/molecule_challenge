@@ -57,7 +57,7 @@ public class ElementDispenser : MonoBehaviour
             m_activeElementObject.transform.position = m_spawnPointTransform.position;
 
             m_elementNameCanvas.enabled = true;
-            m_elementNameText.SetText(elementInfo.Value.Name);
+            m_elementNameText.SetText(elementInfo.Value.Name.ToString());
         }
     }
 

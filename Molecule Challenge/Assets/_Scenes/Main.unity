@@ -453,13 +453,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeOne:
-    Name: 
+    Name: 0
     Symbol: 
     HighlightObject: {fileID: 0}
     ElementObject: {fileID: 0}
     Electrons: 0
   activeTwo:
-    Name: 
+    Name: 0
     Symbol: 
     HighlightObject: {fileID: 0}
     ElementObject: {fileID: 0}
@@ -470,57 +470,57 @@ MonoBehaviour:
   m_colorTwo: {r: 1, g: 0.601208, b: 0, a: 1}
   m_elementPanelTwo: {fileID: 560433452}
   Elements:
-  - Name: Hydrongen
+  - Name: 0
     Symbol: H
     HighlightObject: {fileID: 2113082532}
     ElementObject: {fileID: 291355968}
     Electrons: 1
-  - Name: Carbon
+  - Name: 1
     Symbol: C
     HighlightObject: {fileID: 1305158038}
     ElementObject: {fileID: 1677516005}
     Electrons: 6
-  - Name: Nitrogen
+  - Name: 2
     Symbol: N
     HighlightObject: {fileID: 495280975}
     ElementObject: {fileID: 715085207}
     Electrons: 7
-  - Name: Oxygen
+  - Name: 3
     Symbol: O
     HighlightObject: {fileID: 727240275}
     ElementObject: {fileID: 533667852}
     Electrons: 8
-  - Name: Fluorine
+  - Name: 4
     Symbol: F
     HighlightObject: {fileID: 2062109759}
     ElementObject: {fileID: 1094607231}
     Electrons: 9
-  - Name: Neon
+  - Name: 5
     Symbol: Ne
     HighlightObject: {fileID: 1869082422}
     ElementObject: {fileID: 684439385}
     Electrons: 10
-  - Name: Sodium
+  - Name: 6
     Symbol: Na
     HighlightObject: {fileID: 569566004}
     ElementObject: {fileID: 1393659436}
     Electrons: 11
-  - Name: Magnesium
+  - Name: 7
     Symbol: Mg
     HighlightObject: {fileID: 630103500}
     ElementObject: {fileID: 2012486844}
     Electrons: 12
-  - Name: Aluminum
+  - Name: 8
     Symbol: Al
     HighlightObject: {fileID: 481375568}
     ElementObject: {fileID: 523512305}
     Electrons: 13
-  - Name: Sulfur
+  - Name: 9
     Symbol: S
     HighlightObject: {fileID: 1266727807}
     ElementObject: {fileID: 2069831986}
     Electrons: 16
-  - Name: Chlorine
+  - Name: 10
     Symbol: Cl
     HighlightObject: {fileID: 1378536027}
     ElementObject: {fileID: 884606724}
@@ -552,6 +552,111 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fc605bffecef454bbefceb60b980cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_bondInfoList:
+  - Name: Aluminum Sulfide
+    Elements: 0800000009000000
+    Formula: Al<sub>2</sub>S<sub>3</sub>
+    Type: 1
+  - Name: Aluminum Fluoride
+    Elements: 0800000004000000
+    Formula: AlF<sub>3</sub>
+    Type: 2
+  - Name: Aluminum Oxide
+    Elements: 0800000003000000
+    Formula: Al<sub>2</sub>O<sub>3</sub>
+    Type: 2
+  - Name: Aluminum Chloride
+    Elements: 080000000a000000
+    Formula: AlCl<sub>3</sub>
+    Type: 2
+  - Name: Aluminum Nitride
+    Elements: 0800000002000000
+    Formula: AlN
+    Type: 1
+  - Name: Methane
+    Elements: 0100000000000000
+    Formula: CH<sub>4</sub>
+    Type: 2
+  - Name: Chlorine Trifluoride
+    Elements: 0a00000004000000
+    Formula: ClF<sub>3</sub>
+    Type: 1
+  - Name: Carbon Dioxide
+    Elements: 0100000003000000
+    Formula: CO<sub>2</sub>
+    Type: 2
+  - Name: Dihydrogen
+    Elements: 00000000
+    Formula: H<sub>2</sub>
+    Type: 2
+  - Name: Dihydrogen Monoxide
+    Elements: 0000000003000000
+    Formula: H<sub>2</sub>O
+    Type: 1
+  - Name: Hydrogen Fluoride
+    Elements: 0000000004000000
+    Formula: HF
+    Type: 2
+  - Name: Aluminum Hydride
+    Elements: 0800000000000000
+    Formula: AlH<sub>3</sub>
+    Type: 2
+  - Name: Sodium Chloride
+    Elements: 060000000a000000
+    Formula: NaCl
+    Type: 1
+  - Name: Sodium Hydride
+    Elements: 0600000000000000
+    Formula: NaH
+    Type: 1
+  - Name: Magnesium Hydride
+    Elements: 0700000000000000
+    Formula: MgH<sub>2</sub>
+    Type: 1
+  - Name: Hydrogen Sulfide
+    Elements: 0000000009000000
+    Formula: H<sub>2</sub>S
+    Type: 2
+  - Name: Hydrochloric Acid
+    Elements: 000000000a000000
+    Formula: HCl
+    Type: 2
+  - Name: Tetrafluoromethane
+    Elements: 0100000004000000
+    Formula: CF<sub>4</sub>
+    Type: 2
+  - Name: Carbon Disulfide
+    Elements: 0100000009000000
+    Formula: CS<sub>2</sub>
+    Type: 2
+  - Name: Tetrachloromethane
+    Elements: 010000000a000000
+    Formula: CCl<sub>4</sub>
+    Type: 2
+  - Name: Ammonia
+    Elements: 0200000000000000
+    Formula: NH<sub>3</sub>
+    Type: 2
+  - Name: Azide Ion
+    Elements: 02000000
+    Formula: N<sub>3</sub>
+    Type: 1
+  - Name: Nitrogen Dioxide
+    Elements: 0200000003000000
+    Formula: NO<sub>2</sub>
+    Type: 2
+  - Name: Nitrogen Trifluoride
+    Elements: 0200000004000000
+    Formula: NF<sub>3</sub>
+    Type: 2
+  - Name: Sodium Nitride
+    Elements: 0600000002000000
+    Formula: Na<sub>3</sub>N
+    Type: 1
+  m_possibleBondPanel: {fileID: 735348303}
+  m_possibleBondsText: {fileID: 572877507}
+  m_bondQuestionPanel: {fileID: 332254371}
+  m_instructionText: {fileID: 712629894}
 --- !u!1 &258772169
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,6 +2322,141 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 569566004}
   m_CullTransparentMesh: 1
+--- !u!1 &572877505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 572877506}
+  - component: {fileID: 572877508}
+  - component: {fileID: 572877507}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &572877506
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572877505}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 735348304}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &572877507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572877505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281808695
+  m_fontColor: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 14
+  m_fontSizeBase: 14
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 5
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &572877508
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572877505}
+  m_CullTransparentMesh: 1
 --- !u!1 &589198609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3163,6 +3403,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 727240275}
   m_CullTransparentMesh: 1
+--- !u!1 &735348303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735348304}
+  - component: {fileID: 735348306}
+  - component: {fileID: 735348305}
+  m_Layer: 5
+  m_Name: Possible Bond Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &735348304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735348303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 572877506}
+  m_Father: {fileID: 873341022}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 10.3}
+  m_SizeDelta: {x: 56, y: 64}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &735348305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735348303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.75444996, g: 0.9245283, b: 0.7716064, a: 0.7294118}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &735348306
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735348303}
+  m_CullTransparentMesh: 1
 --- !u!1 &758355709
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,6 +3594,7 @@ RectTransform:
   - {fileID: 1399716915}
   - {fileID: 1149359996}
   - {fileID: 332254372}
+  - {fileID: 735348304}
   m_Father: {fileID: 683073426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7126,7 +7444,7 @@ Transform:
   m_GameObject: {fileID: 1720289426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
+  m_LocalScale: {x: 0.5, y: 0.05, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 779165331}
