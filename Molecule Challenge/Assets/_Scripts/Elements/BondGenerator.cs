@@ -116,8 +116,8 @@ public class BondGenerator : MonoBehaviour
         foreach (BondInfo info in m_foundInfoList)
         {
             Debug.Log(info.Name);
-            fullName = "<size=8>" + info.Name + "</size>\n";
-            m_possibleBondsText.SetText(m_possibleBondsText.text + (fullName + info.Formula + "\n"));
+            fullName = "<size=6>" + info.Name + "</size>\n";
+            m_possibleBondsText.SetText(m_possibleBondsText.text + (fullName + "<cspace=1>" + info.Formula + "</cspace>\n"));
         }
 
         int foundCount = m_foundInfoList.Count;
