@@ -12,6 +12,13 @@ public class ElementDispenser : MonoBehaviour
         Two = 2
     }
 
+    [System.Serializable]
+    public struct PoolItem
+    {
+        public ElementManager.ElementOption Name;
+        public GameObject ElementObject;
+    }
+
     [Header("Info")]
     [SerializeField] private DispenserNumber dispenserNumber;
 
@@ -28,15 +35,29 @@ public class ElementDispenser : MonoBehaviour
     [SerializeField] private Canvas m_elementNameCanvas;
     [SerializeField] private TextMeshProUGUI m_elementNameText;
 
+    [Header("Pool")]
+    [SerializeField] List<PoolItem> m_poolItems = new List<PoolItem>();
+    private Dictionary<ElementManager.ElementOption?, PoolItem> m_poolItemDic = new Dictionary<ElementManager.ElementOption?, PoolItem>();
+
     // Start is called before the first frame update
     void Start()
     {
         ElementManager.ElementSelectedEvent.AddListener(OnElementSelected);
+
+        LoadPoolItemDict();
     }
 
     private void OnDestroy()
     {
         ElementManager.ElementSelectedEvent.RemoveListener(OnElementSelected);
+    }
+
+    private void LoadPoolItemDict()
+    {
+        foreach (PoolItem poolItem in m_poolItems)
+        {
+            m_poolItemDic.Add(poolItem.Name, poolItem);
+        }
     }
 
     private void OnElementSelected(ElementManager.ElementInfo? elementInfo, DispenserNumber number)
@@ -52,7 +73,8 @@ public class ElementDispenser : MonoBehaviour
 
             if (elementInfo != null)
             {
-                m_activeElementObject = elementInfo?.ElementObject;
+                ElementManager.ElementOption? option = elementInfo?.Name;
+                m_activeElementObject = m_poolItemDic[option].ElementObject;
             }
 
             m_activeElementObject.SetActive(true);

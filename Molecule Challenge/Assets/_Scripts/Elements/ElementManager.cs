@@ -29,7 +29,6 @@ public class ElementManager : MonoBehaviour
         public ElementOption Name;
         public string Symbol;
         public GameObject HighlightObject;
-        public GameObject ElementObject;
         public int Electrons;
     }
     [Header("Element Dispensers")]
