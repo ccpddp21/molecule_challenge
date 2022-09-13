@@ -61,6 +61,11 @@ public class BondGenerator : MonoBehaviour
         ElementManager.ElementSelectedEvent.RemoveListener(OnElementSelected);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="elementInfo"></param>
+    /// <param name="dispenserNumber"></param>
     private void OnElementSelected(ElementManager.ElementInfo? elementInfo, ElementDispenser.DispenserNumber dispenserNumber)
     {
         if (elementInfo == null)
@@ -106,6 +111,10 @@ public class BondGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Iterates through the list of compounds based on the selected Elements
+    /// Displays the available compounds
+    /// </summary>
     private void ShowPossibleBonds()
     {
         m_foundInfoList.Clear();
@@ -149,6 +158,9 @@ public class BondGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Resets the attributes
+    /// </summary>
     private void HidePossibleBonds()
     {
         m_expectedBondTypeAnswer = BondType.NA;
@@ -162,11 +174,19 @@ public class BondGenerator : MonoBehaviour
         m_covalentButtonBorder.color = Color.white;
     }
 
+    /// <summary>
+    /// Changes the Instruction text
+    /// </summary>
+    /// <param name="text"></param>
     private void UpdateInstructionText(string text)
     {
         m_instructionText.SetText(text);
     }
 
+    /// <summary>
+    /// Checks is selected answer matches the store BondType value
+    /// </summary>
+    /// <param name="answer"></param>
     public void CheckBondAnswer(int answer)
     {
         if (m_expectedBondTypeAnswer == BondType.Ionic)

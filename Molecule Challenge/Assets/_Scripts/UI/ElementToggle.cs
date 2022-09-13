@@ -31,21 +31,37 @@ public class ElementToggle : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Set symbol text on label
+    /// </summary>
+    /// <param name="symbol"></param>
     public void SetSymbolText(string symbol)
     {
         m_label.SetText(symbol);
     }
 
+    /// <summary>
+    /// Set reference to highlight gameObject
+    /// </summary>
+    /// <param name="highlightObj"></param>
     public void SetHighlightGameObject(GameObject highlightObj)
     {
         m_highlightGameObject = highlightObj;
     }
 
+    /// <summary>
+    /// Set the highlight color
+    /// </summary>
+    /// <param name="color"></param>
     public void SetHighlightColor(Color color)
     {
         m_highlightColor = color;
     }
 
+    /// <summary>
+    /// Invokes the ElementSelectedEvent on value change
+    /// </summary>
+    /// <param name="toggle"></param>
     private void OnValueChanged(Toggle toggle)
     {
         m_highlightGameObject.SetActive(toggle.isOn);

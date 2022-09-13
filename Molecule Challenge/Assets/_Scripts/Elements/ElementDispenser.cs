@@ -52,6 +52,9 @@ public class ElementDispenser : MonoBehaviour
         ElementManager.ElementSelectedEvent.RemoveListener(OnElementSelected);
     }
 
+    /// <summary>
+    /// Populate the dictionary
+    /// </summary>
     private void LoadPoolItemDict()
     {
         foreach (PoolItem poolItem in m_poolItems)
@@ -60,6 +63,11 @@ public class ElementDispenser : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enables the corresponding Element gameObject based on the triggered Element toggle
+    /// </summary>
+    /// <param name="elementInfo"></param>
+    /// <param name="number"></param>
     private void OnElementSelected(ElementManager.ElementInfo? elementInfo, DispenserNumber number)
     {
         if (number == dispenserNumber)
@@ -86,6 +94,9 @@ public class ElementDispenser : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reset the Dispenser attributes
+    /// </summary>
     private void ResetDispenser()
     {
         if (m_activeElementObject != null)

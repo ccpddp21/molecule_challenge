@@ -64,6 +64,9 @@ public class ElementManager : MonoBehaviour
         CreateElementToggles();
     }
 
+    /// <summary>
+    /// Populates the Element dictionary
+    /// </summary>
     private void CreateElementDictionary()
     {
         foreach (ElementInfo element in Elements)
@@ -72,6 +75,9 @@ public class ElementManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Instantiates the Element toggles
+    /// </summary>
     private void CreateElementToggles()
     {
         Toggle toggle;
