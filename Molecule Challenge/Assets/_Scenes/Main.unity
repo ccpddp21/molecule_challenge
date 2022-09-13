@@ -598,7 +598,7 @@ MonoBehaviour:
     Formula: CCl<sub>4</sub>
     Type: 2
   - Name: Chlorine Gas
-    Elements: 0a000000
+    Elements: 0a0000000a000000
     Formula: Cl<sub>2</sub>
     Type: 2
   - Name: Chlorine Trifluoride
@@ -626,7 +626,7 @@ MonoBehaviour:
     Formula: HF
     Type: 2
   - Name: Dihydrogen
-    Elements: 00000000
+    Elements: 0000000000000000
     Formula: H<sub>2</sub>
     Type: 2
   - Name: Dihydrogen Monoxide
@@ -662,7 +662,7 @@ MonoBehaviour:
     Formula: MgH<sub>2</sub>
     Type: 1
   - Name: Azide Ion
-    Elements: 02000000
+    Elements: 0200000002000000
     Formula: N<sub>3</sub>
     Type: 1
   - Name: Ammonia
