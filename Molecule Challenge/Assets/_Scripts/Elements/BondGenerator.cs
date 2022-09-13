@@ -3,14 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BondGenerator : MonoBehaviour
 {
     public enum BondType
     {
-        NA,
-        Ionic,
-        Convalent
+        NA = 0,
+        Ionic = 1,
+        Convalent = 2
     }
 
     [System.Serializable]
@@ -33,6 +34,8 @@ public class BondGenerator : MonoBehaviour
     [SerializeField] private TextMeshProUGUI m_possibleBondsText;
     [SerializeField] private GameObject m_bondQuestionPanel;
     [SerializeField] private TextMeshProUGUI m_instructionText;
+    [SerializeField] private Image m_ionicButtonBorder;
+    [SerializeField] private Image m_covalentButtonBorder;
 
     private bool elemOneSelected = false;
     private ElementManager.ElementInfo? elemOneInfo;
@@ -40,6 +43,8 @@ public class BondGenerator : MonoBehaviour
     private ElementManager.ElementInfo? elemTwoInfo;
 
     private List<BondInfo> m_foundInfoList = new List<BondInfo>();
+
+    private BondType m_expectedBondTypeAnswer;
 
     // Start is called before the first frame update
     void Start()
@@ -103,9 +108,6 @@ public class BondGenerator : MonoBehaviour
 
     private void ShowPossibleBonds()
     {
-        
-        Debug.Log(elemOneInfo.Value.Name + " and " + elemTwoInfo.Value.Name + " can make");
-
         m_foundInfoList.Clear();
         m_foundInfoList.AddRange(m_bondInfoList.FindAll(bondInfo =>
             {
@@ -115,7 +117,6 @@ public class BondGenerator : MonoBehaviour
         string fullName;
         foreach (BondInfo info in m_foundInfoList)
         {
-            Debug.Log(info.Name);
             fullName = "<size=6>" + info.Name + "</size>\n";
             m_possibleBondsText.SetText(m_possibleBondsText.text + (fullName + "<cspace=1>" + info.Formula + "</cspace>\n"));
         }
@@ -126,6 +127,7 @@ public class BondGenerator : MonoBehaviour
 
         if (foundCount > 0)
         {
+            m_expectedBondTypeAnswer = m_foundInfoList[0].Type;
             m_possibleBondPanel.SetActive(true);
             m_bondQuestionPanel.SetActive(true);
         }
@@ -133,14 +135,47 @@ public class BondGenerator : MonoBehaviour
 
     private void HidePossibleBonds()
     {
+        m_expectedBondTypeAnswer = BondType.NA;
         m_possibleBondPanel.SetActive(false);
         m_possibleBondsText.SetText("");
         m_bondQuestionPanel.SetActive(false);
         UpdateInstructionText(SELECT_ELEMENTS);
+        m_ionicButtonBorder.gameObject.SetActive(false);
+        m_ionicButtonBorder.color = Color.white;
+        m_covalentButtonBorder.gameObject.SetActive(false);
+        m_covalentButtonBorder.color = Color.white;
     }
 
     private void UpdateInstructionText(string text)
     {
         m_instructionText.SetText(text);
+    }
+
+    public void CheckBondAnswer(int answer)
+    {
+        if (m_expectedBondTypeAnswer == BondType.Ionic)
+        {
+            m_ionicButtonBorder.gameObject.SetActive(true);
+            m_ionicButtonBorder.color = Color.green;
+        }
+        else if (m_expectedBondTypeAnswer == BondType.Convalent)
+        {
+            m_covalentButtonBorder.gameObject.SetActive(true);
+            m_covalentButtonBorder.color = Color.green;
+        }
+
+        if (answer != (int) m_expectedBondTypeAnswer)
+        {
+            if (answer == (int)BondType.Ionic)
+            {
+                m_ionicButtonBorder.gameObject.SetActive(true);
+                m_ionicButtonBorder.color = Color.red;
+            }
+            else if (answer == (int)BondType.Convalent)
+            {
+                m_covalentButtonBorder.gameObject.SetActive(true);
+                m_covalentButtonBorder.color = Color.red;
+            }
+        }
     }
 }
